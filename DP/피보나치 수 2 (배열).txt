@@ -1,0 +1,33 @@
+package com.kh.first.controller;
+
+import java.util.Scanner;
+
+public class BAEKJOON {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("숫자를 입력 해 주세요 ");
+		System.out.print("입력 : ");
+		int num = sc.nextInt();
+		
+		// 배열은 0부터 시작이므로 20을 입력하면 21개 이므로 입력 값에 +1을 해줘야함
+		long[] arr = new long[num+1];
+		
+		for(int i = 0; i< arr.length; i++) {
+			if(i==0) {
+				arr[0] = 0;
+			} else if (i == 1) {
+				arr[1] = 1;
+			} else {
+				arr[i] = arr[i-1] + arr[i-2];
+			}
+		}
+		
+		System.out.println(arr[num]);
+		
+		
+	}
+
+}

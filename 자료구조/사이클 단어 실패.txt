@@ -1,0 +1,49 @@
+package com.kh.first.controller;
+
+import java.util.Scanner;
+
+public class BAEKJOON {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+
+		int a = sc.nextInt();
+		String[] arr = new String[51];
+		sc.nextLine();
+		String o = sc.nextLine();
+		for (int i = 0; i < a-1; i++) {
+			arr[i] = sc.nextLine();
+		}
+		
+		int num = 0;
+		int b = 0;
+		String c ="";
+		
+		for (int i = 0; i < a-1; i++) {
+			if(arr[i].length() == o.length()) {
+				if ( !((arr[i] + arr[i]).contains(o))) {
+					num++;
+				}
+			} else if(arr[i].length() != o.length()){
+				if(((arr[i] + arr[i]).contains(o)) && b<=0 ) {
+					num++;
+					b++;
+					c = arr[i];
+				} else if (!((arr[i] + arr[i]).contains(o))&&b<=0)  {
+					num++;
+					b++;
+				} else if(((arr[i] + arr[i]).contains(o)) && b<=0 ) {
+					num++;
+				} else {
+					num++;
+				}
+				
+			}
+			
+		}
+	
+		System.out.println(num+b);
+
+	}
+}

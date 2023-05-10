@@ -1,0 +1,38 @@
+package com.kh.first.controller;
+
+import java.util.Scanner;
+import java.util.Stack;
+
+public class BAEKJOON {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Stack<Integer> stack = new Stack();
+		Scanner sc = new Scanner(System.in);
+
+	    int q = sc.nextInt();
+	    
+	    for (int i = 0 ; i < q ; i++) {
+	    	int g = sc.nextInt();
+	    	stack.push(g);
+	    }
+		
+
+	    int s = stack.pop();
+	    int v = 1;
+	    int h = 0; 
+	    while(!stack.isEmpty()) {
+	    	h = stack.pop();
+	    	if(h > s) {
+	    		s = h;
+	    		v++;
+	    	}
+	    }
+		
+	    System.out.println(v);
+
+		
+	}
+
+}

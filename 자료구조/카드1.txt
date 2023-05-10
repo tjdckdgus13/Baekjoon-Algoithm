@@ -1,0 +1,38 @@
+package com.kh.first.controller;
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class BAEKJOON {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	Scanner sc = new Scanner(System.in);
+	System.out.print("숫자를 입력해주세요 : ");
+	int num = sc.nextInt();
+	Queue<Integer> q = new LinkedList<Integer>();
+	
+	for (int i = 1; i<=num; i++) {
+		q.offer(i);
+	}
+	
+	while(!q.isEmpty()) {
+		int num1 = q.poll();
+		System.out.println(num1 + " ");
+		
+		
+		
+		int num2 = q.poll();
+		q.offer(num2);
+		
+		if(q.isEmpty()) {
+			break;
+		}
+	}
+	
+	
+	}
+
+}

@@ -1,0 +1,39 @@
+package com.kh.first.controller;
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class BAEKJOON {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc = new Scanner(System.in);
+		System.out.print("숫자를 입력해주세요 : ");
+		int num = sc.nextInt();
+
+		int a = 0;
+		int b = 0;
+		int c = 0;
+
+		if (num >= 300) {
+			a = num / 300;
+			num -= 300 * a;
+		}
+		if (num >= 60) {
+			b = num / 60;
+			num -= 60 * b;
+		} 
+		if (num%10 == 0 ) {
+			
+			c = num / 10;
+			
+			System.out.println("a 개수 : " +a + "  b 개수 : " + b + " c 개수 :  " + c );
+		} else {
+			System.out.println(-1);
+		}
+
+	}
+
+}

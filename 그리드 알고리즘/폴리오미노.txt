@@ -1,0 +1,48 @@
+package com.kh.first.controller;
+
+import java.util.Scanner;
+
+public class BAEKJOON {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+
+		String str = sc.nextLine();
+
+		StringBuilder sb = new StringBuilder();
+
+		int num = 0;
+		int g = 0;
+		for (int i = 0; i < str.length(); i++) {
+
+			if (str.charAt(i) != '.') {
+				num++;
+			} else {
+				if (num % 2 == 0) {
+
+					g = num / 4;
+
+					for (int j = 0; j < g; j++) {
+						sb.append("AAAA");
+					}
+
+					g = num % 4;
+
+					if (g != 0) {
+						sb.append("BB");
+					}
+
+					num = 0;
+
+				} else {
+					System.out.println(-1);
+					return;
+				}
+				sb.append('.');
+			}
+		}
+		System.out.println(num);
+		System.out.println(sb);
+	}
+}

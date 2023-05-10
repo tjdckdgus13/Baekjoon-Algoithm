@@ -1,0 +1,69 @@
+
+package com.kh.first.controller;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class BAEKJOON {
+
+	static StringBuilder sb = new StringBuilder();
+
+	public static void main(String[] args) throws IOException {
+
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+		int n = Integer.parseInt(br.readLine());
+		for (int i = 0; i < n; i++) {
+			String st = br.readLine();
+			int num = check(st);
+			sb.append(num).append("\n");
+		}
+		System.out.println(sb);
+	}
+
+	public static int check(String st) {
+		int left = 0, right = st.length() - 1;
+
+		int num = 0;
+
+		while (left < right) {
+			if (st.charAt(left) == st.charAt(right)) {
+				left++;
+				right--;
+			} else {
+
+				int Left = left, Right = right;
+
+				Left++;
+				while (Left < Right) {
+					if (st.charAt(Left) == st.charAt(Right)) {
+						Left++;
+						Right--;
+					} else {
+						num++;
+						break;
+					}
+				}
+
+				Left = left;
+				Right = right;
+
+				Right--;
+				while (Left < Right) {
+					if (st.charAt(Left) == st.charAt(Right)) {
+						Left++;
+						Right--;
+					} else {
+						num++;
+						break;
+					}
+
+				}
+				return num;
+			}
+		}
+		return num;
+	}
+
+}

@@ -1,0 +1,62 @@
+
+package com.kh.first.controller;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Stack;
+
+public class BAEKJOON {
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+		String s = br.readLine();
+		Stack<String> stack = new Stack<>();
+
+		int num = 1, result = 0;
+
+		for (int i = 0; i < s.length(); i++) {
+
+			switch (s.charAt(i)) {
+			case '(':
+				num *= 2;
+				stack.add("(");
+				break;
+
+			case '[':
+				num *= 3;
+				stack.add("[");
+				break;
+
+			case ')':
+				if (stack.isEmpty() || stack.peek() != "(") {
+					result = 0;
+					break;
+				}
+
+				if (s.charAt(i - 1) == '(') {
+					result += num;
+				}
+				stack.pop();
+				num /= 2;
+				break;
+
+			case ']':
+				if (stack.isEmpty() || stack.peek() != "[") {
+					result = 0;
+					break;
+				}
+
+				if (s.charAt(i - 1) == '[') {
+					result += num;
+				}
+				num /= 3;
+				stack.pop();
+				break;
+			}
+		}
+		System.out.println(!stack.isEmpty() ? 0 : result);
+	}
+
+}

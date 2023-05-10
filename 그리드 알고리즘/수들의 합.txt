@@ -1,0 +1,26 @@
+package com.kh.first.controller;
+
+import java.util.Scanner;
+
+public class BAEKJOON {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+
+		int s = sc.nextInt();
+		
+		int n = 0;
+		int sum = 0;
+		
+		while(s>sum) {
+			n++;
+			sum += n;
+		}
+		if(sum> s) {
+			n--;
+		}
+		
+		System.out.println(n);
+	}
+}

@@ -1,0 +1,41 @@
+package com.kh.first.controller;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+
+
+public class BAEKJOON {
+
+	public static void main(String[] args) {
+
+		String[] arr = new String[51];
+		Scanner sc = new Scanner(System.in);
+
+		int a = sc.nextInt();
+		sc.nextLine();
+		int num = 0;
+
+		for (int i = 0; i < a; i++) {
+			String str = sc.nextLine();
+			char[] to = str.toCharArray();
+			Arrays.sort(to);
+			String str1 = new String(to);
+			arr[i] = str1;
+
+		}
+		
+		while(true) {
+			for(int i = 1; i < a ; i++) {
+				if(!arr[0].equals(arr[i]) ) {
+					num++;
+				}
+			}
+	
+			System.out.println(num);
+			break;
+		}
+	
+	
+	}
+}

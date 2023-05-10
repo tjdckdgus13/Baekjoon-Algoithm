@@ -1,0 +1,30 @@
+package com.kh.first.controller;
+
+import java.util.Scanner;
+
+public class BAEKJOON {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("숫자를 입력 해 주세요 ");
+		System.out.print("입력 : ");
+		int num = sc.nextInt();
+		
+		int a = 0;
+		int b = 1;
+		int s = 0;
+		
+		// 1 <= num <= 45 
+		for (int i = 1; i < num ; i++) {
+			s = a+b;
+			a=b;
+			b = s;
+		}
+		System.out.println("a 개수 : " + a + " / " + "b 개수 : "+b);
+		
+		
+	}
+
+}

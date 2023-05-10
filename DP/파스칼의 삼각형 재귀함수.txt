@@ -1,0 +1,31 @@
+package com.kh.first.controller;
+
+import java.util.Scanner;
+
+public class BAEKJOON {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("숫자를 입력 해 주세요 ");
+		System.out.print("입력 : ");
+		int a = sc.nextInt();
+		System.out.print("입력 : ");
+		int b = sc.nextInt();
+		
+		System.out.println(a);
+		System.out.println(b);
+		
+		System.out.println(plz(a,b));
+	
+		
+	}
+	public static int plz(int a, int b) {
+		if(a==b || b == 1) {
+			return 1;
+		}
+		
+		return plz(a - 1 , b- 1 ) + plz(a- 1 , b);
+	}
+}

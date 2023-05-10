@@ -1,0 +1,38 @@
+package com.kh.first.controller;
+
+import java.util.Scanner;
+
+public class BAEKJOON {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("숫자를 입력 해 주세요 ");
+		System.out.print("입력 : ");
+		int num = sc.nextInt();
+		
+		if (num % 5 == 0 ) {
+			System.out.println(num / 5);
+			return;
+		} else {
+			int a  = num / 5 ;
+			for (int i = a ; i > 0; i--) {
+				int b = num - ( i * 5);
+				if (b % 3 == 0) {
+					System.out.println( i + (b / 3));
+					return;
+				}
+			}
+		}
+		if (num % 3 == 0) {
+			System.out.println(num / 3);
+		} else {
+			System.out.println(-1);
+		}
+		
+		
+		
+	}
+
+}
