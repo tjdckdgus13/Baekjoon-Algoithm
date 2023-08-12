@@ -32,7 +32,6 @@ public class Main {
 				pq.offer(a);
 			}
 		}
-
 		System.out.println(sb);
 	}
 }
