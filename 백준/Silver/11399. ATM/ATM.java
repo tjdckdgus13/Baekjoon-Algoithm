@@ -8,7 +8,6 @@ public class Main {
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
 		int N = Integer.parseInt(br.readLine());
 		int count = 0;
 		int result = 0;
@@ -24,4 +23,5 @@ public class Main {
 		}
 		System.out.println(result);
 	}
+
 }
