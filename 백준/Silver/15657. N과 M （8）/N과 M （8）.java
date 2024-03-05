@@ -5,9 +5,9 @@ import java.util.*;
 
 public class Main {
     static int[] arr;
-    static Set<String> set = new LinkedHashSet<>();
     static int N, M;
     static int[] result;
+    static StringBuilder sb = new StringBuilder();
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -28,24 +28,18 @@ public class Main {
         Arrays.sort(arr);
 
         check(0, 0);
-
-        StringBuilder sb = new StringBuilder();
-        for (String i : set) {
-            sb.append(i+ "\n");
-        }
-
+        
         System.out.println(sb.toString());
 
     }
 
     public static void check (int depth, int idx){
         if (depth == M) {
-            StringBuilder sb = new StringBuilder();
             for (int i = 0; i < M; i++) {
                 sb.append(result[i] + " ");
             }
 
-            set.add(sb.toString());
+            sb.append("\n");
             return;
         }
 
