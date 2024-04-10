@@ -6,6 +6,7 @@ public class Main {
     static int N, M, W;
     static BufferedReader br;
     static StringBuilder sb = new StringBuilder();
+    static final int INF = 987654321;
     public static void main(String[] args) throws IOException {
         br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -51,6 +52,8 @@ public class Main {
 
     public static boolean bellman() {
         int[] dist = new int[N + 1];
+        Arrays.fill(dist, INF);
+        dist[1] = 0;
         boolean check = false;
         for (int i = 1; i < N; i++) {
             check = false;
