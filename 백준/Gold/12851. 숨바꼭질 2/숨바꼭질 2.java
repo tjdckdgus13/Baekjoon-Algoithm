@@ -12,15 +12,10 @@ public class Main {
 
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
+        
         curTime = Integer.MAX_VALUE;
         count = 0;
         visit = new int[100001];
-
-        if (N == M) {
-            System.out.println(0);
-            System.out.println(1);
-            System.exit(0);
-        }
 
         bfs();
 
@@ -30,6 +25,7 @@ public class Main {
 
     static void bfs() {
         Queue<Node> queue = new LinkedList<>();
+
         queue.add(new Node(N, 0));
         Arrays.fill(visit, Integer.MAX_VALUE);
         while (!queue.isEmpty()) {
