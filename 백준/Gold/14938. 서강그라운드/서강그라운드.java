@@ -66,7 +66,7 @@ public class Main {
             check[curNode] = true;
 
             for (Node i : list[curNode]) {
-                if (!check[i.end] && dist[i.end] > dist[curNode] + i.weight) {
+                if (dist[i.end] > dist[curNode] + i.weight) {
                     dist[i.end] = dist[curNode] + i.weight;
                     queue.add(new Node(i.end, dist[i.end]));
                 }
