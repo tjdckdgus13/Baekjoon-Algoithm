@@ -17,6 +17,7 @@ public class Main {
         for (int i = 1; i <= 4; i++) {
             String[] str = br.readLine().split("");
             num[i] = 2;
+
             for (int j = 0; j < 8; j++) {
                 arr[i][j] = Integer.parseInt(str[j]);
             }
@@ -27,8 +28,10 @@ public class Main {
         StringTokenizer st;
         while (N-- > 0) {
             st = new StringTokenizer(br.readLine());
+
             int gear = Integer.parseInt(st.nextToken());
             int d = Integer.parseInt(st.nextToken());
+
             check = new boolean[5];
 
             int curLeft = (num[gear] + 4) % 8;
@@ -39,20 +42,20 @@ public class Main {
                 check[i - 1] = true;
             }
 
-            leftGear(gear, d);
-
+            int curRight;
             for (int i = gear; i < 4; i++) {
-                int curRight = (num[i + 1] + 4) % 8;
+                curRight = (num[i + 1] + 4) % 8;
+
                 if (arr[i][num[i]] == arr[i + 1][curRight]) break;
 
                 check[i + 1] = true;
             }
 
+            leftGear(gear, d);
             rightGear(gear, d);
 
             if (d == 1) num[gear] = num[gear] - 1 == -1 ? 7 : num[gear] - 1;
             if (d == -1) num[gear] = (num[gear] + 1) % 8;
-
         }
 
         int result = 0;
@@ -64,9 +67,8 @@ public class Main {
             result += arr[i][num[i]] == 1 ? (int) Math.pow(2, i - 1) : 0;
 
         }
+
         System.out.println(result);
-
-
     }
 
     public static void leftGear(int gear, int d) {
@@ -85,6 +87,7 @@ public class Main {
         int dire = d;
         for (int i = gear + 1; i <= 4; i++) {
             if (!check[i]) break;
+
             if (dire == 1) num[i] = (num[i] + 1) % 8;
             if (dire == -1) num[i] = num[i] - 1 == -1 ? 7 : num[i] - 1;
 
